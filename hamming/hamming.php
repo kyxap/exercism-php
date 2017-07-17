@@ -7,7 +7,15 @@
 
 function distance($a, $b)
 {
-    //
-    // YOUR CODE GOES HERE
-    //
+
+    if (strlen($a) != strlen($b)) {
+        throw new InvalidArgumentException();
+    }
+    $count = 0;
+    for( $i = 0; $i < strlen($a); $i++ ) {
+      if ($a{$i} != $b{$i}) {
+        $count++;
+      }
+    }
+    return $count;
 }
